@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private AlertDialog enableNotificationListenerAlertDialog;
 
+    private BroadcastReceiver broadcastReceiver;
+
     public TextView textView;
 
     @Override
