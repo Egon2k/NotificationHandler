@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private AlertDialog enableNotificationListenerAlertDialog;
 
-    private BroadcastReceiver broadcastReceiver;
-
     public TextView textView;
 
     @Override
@@ -44,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(onNotice);
+    }
 
     private boolean isNotificationServiceEnabled(){
         String pkgName = getPackageName();
