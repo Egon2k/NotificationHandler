@@ -12,6 +12,7 @@ import android.provider.Settings;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.TextView;
 
 
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             String title = intent.getStringExtra("title");
             String text = intent.getStringExtra("text");
 
-            textView.setText(title + " " + text);
+            textView.setText(textView.getText() +"\n" + title + " " + text);
         }
     };
 
@@ -103,5 +104,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
         return(alertDialogBuilder.create());
+    }
+
+    public void onClick_clearTextView(View v){
+        textView.setText("");
     }
 }
