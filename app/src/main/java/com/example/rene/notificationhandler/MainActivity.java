@@ -14,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -75,7 +77,13 @@ public class MainActivity extends AppCompatActivity {
             String title = intent.getStringExtra("title");
             String text = intent.getStringExtra("text");
 
-            textView.setText(textView.getText() +"\n" + title + " " + text);
+            Date currentTime = Calendar.getInstance().getTime();
+
+            textView.setText(textView.getText() +"\n"
+                    + currentTime.toString() + "\n"
+                    + "Pack:\t" + pack + "\n"
+                    + "Title:\t" + title + "\n"
+                    + "Text:\t" + text + "\n");
         }
     };
 
